@@ -6,15 +6,21 @@
 			@input="updateTodoText"
 			@add="addTodoItem"
 		></todo-input>
+		<div>
+			<ul>
+				<todo-list-item></todo-list-item>
+			</ul>
+		</div>
 	</div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import TodoInput from './components/TodoInput.vue';
+import TodoListItem from './components/TodoListItem.vue';
 
 export default Vue.extend({
-	components: { TodoInput },
+	components: { TodoInput, TodoListItem },
 	data() {
 		return {
 			todoText: '',
