@@ -8,7 +8,11 @@
 		></todo-input>
 		<div>
 			<ul>
-				<todo-list-item></todo-list-item>
+				<todo-list-item
+					v-for="(todoItem, index) of todoItems"
+					:key="index"
+					:todoItem="todoItem"
+				></todo-list-item>
 			</ul>
 		</div>
 	</div>
