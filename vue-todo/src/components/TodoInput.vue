@@ -13,12 +13,13 @@ export default Vue.extend({
 	props: {
 		item: {
 			type: String,
-			default: '',
+			required: true,
 		},
 	},
 	methods: {
-		handleInput(event: any) {
-			this.$emit('input', event.target.value);
+		handleInput(event: InputEvent) {
+			const eventTarget = event.target as HTMLInputElement;
+			this.$emit('input', eventTarget.value);
 		},
 		addTodo() {
 			this.$emit('add');
