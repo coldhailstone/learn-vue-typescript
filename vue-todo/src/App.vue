@@ -32,7 +32,7 @@ const storage = {
 		const parsed = JSON.stringify(todoItems);
 		localStorage.setItem(STORAGE_KEY, parsed);
 	},
-	fetch() {
+	fetch(): Todo[] {
 		const todoItems = localStorage.getItem(STORAGE_KEY) || '[]';
 		const result = JSON.parse(todoItems);
 		return result;
