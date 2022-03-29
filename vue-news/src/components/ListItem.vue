@@ -31,7 +31,8 @@
 						}}</router-link>
 					</small>
 					<small v-if="news.time_ago" class="link-text">
-						{{ news.time_ago }}
+						<!-- {{ news.time_ago }} -->
+						{{ timeAgo(news) }}
 					</small>
 				</div>
 			</li>
@@ -53,6 +54,11 @@ export default Vue.extend({
 	computed: {
 		listItems(): any {
 			return this.$store.getters.fetchedList;
+		},
+	},
+	methods: {
+		timeAgo(news: NewsItem): string {
+			return news.time_ago.concat(', 2022');
 		},
 	},
 });
