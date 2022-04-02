@@ -23,6 +23,10 @@ export default {
 			loading: false,
 		};
 	},
+	created() {
+		bus.$on('on:progress', this.onProgress);
+		bus.$on('off:progress', this.offProgress);
+	},
 	methods: {
 		onProgress() {
 			this.loading = true;
@@ -30,10 +34,6 @@ export default {
 		offProgress() {
 			this.loading = false;
 		},
-	},
-	created() {
-		bus.$on('on:progress', this.onProgress);
-		bus.$on('off:progress', this.offProgress);
 	},
 };
 </script>
