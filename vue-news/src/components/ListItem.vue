@@ -52,9 +52,9 @@ export default Vue.extend({
 		},
 	},
 	computed: {
-		listItems(): any {
-			return this.$store.getters.fetchedList;
-		},
+		// listItems(): any {
+		// 	return this.$store.getters.fetchedList;
+		// },
 	},
 	methods: {
 		timeAgo(news: NewsItem): string {
