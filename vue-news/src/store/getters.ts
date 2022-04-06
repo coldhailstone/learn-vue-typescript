@@ -4,6 +4,12 @@ export const getters = {
 	fetchedNews(state: RootState) {
 		return state.news;
 	},
+	fetchedUser(state: RootState) {
+		return state.user;
+	},
+	fetchedList(state: RootState) {
+		return state.list;
+	},
 };
 
 export type Getters = typeof getters;
