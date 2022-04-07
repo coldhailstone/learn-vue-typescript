@@ -1,32 +1,39 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
+  <div>
+    <canvas id="myChart"></canvas>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import Vue from "vue";
+import Chart from "chart.js/auto";
+import { ChartConfiguration } from "chart.js";
 
-nav {
-  padding: 30px;
-}
+export default Vue.extend({
+  mounted() {
+    const config: ChartConfiguration = {
+      type: "line",
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June"],
+        datasets: [
+          {
+            label: "My First dataset",
+            backgroundColor: "rgb(255, 99, 132)",
+            borderColor: "rgb(255, 99, 132)",
+            data: [0, 10, 5, 2, 20, 30, 45],
+          },
+        ],
+      },
+      options: {},
+    };
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    const ctx = (
+      document.getElementById("myChart") as HTMLCanvasElement
+    ).getContext("2d") as CanvasRenderingContext2D;
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+    const myChart = new Chart(ctx, config);
+  },
+});
+</script>
+
+<style scoped></style>
