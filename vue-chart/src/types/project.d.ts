@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Chart = require('chart.js');
+import Chart from 'chart.js/auto';
 
 type ChartLib = typeof Chart;
 
