@@ -6,7 +6,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Chart from 'chart.js/auto';
 import { ChartConfiguration } from 'chart.js';
 
 export default Vue.extend({
@@ -34,7 +33,7 @@ export default Vue.extend({
 			return;
 		}
 
-		const myChart = new Chart(ctx, config);
+		const myChart = new this.$_Chart(ctx, config);
 	},
 });
 </script>
